@@ -5,9 +5,11 @@ const slice = createSlice({
   name: "contacts",
   initialState: { contacts: initialContacts },
   reducers: {
-    //  deleteContact: (state, action) => {
-    // //   state.contacts = state.contacts.filter(el => [el.id](<http://el.id/>) !== action.payload)
-    //  },
+    deleteContact: (state, action) => {
+      state.contacts = state.contacts.filter(
+        (contact) => contact.id !== action.payload
+      );
+    },
     addContact: (state, action) => {
       state.contacts.push(action.payload);
     },
